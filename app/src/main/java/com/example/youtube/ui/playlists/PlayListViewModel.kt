@@ -2,11 +2,10 @@ package com.example.youtube.ui.playlists
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.viewbinding.BuildConfig
-import com.example.youtube.base.BaseViewModel
-import com.example.youtube.model.Playlist
-import com.example.youtube.remote.ApiService
-import com.example.youtube.remote.RetrofitClient
+import com.example.youtube.core.ui.BaseViewModel
+import com.example.youtube.data.remote.ApiService
+import com.example.youtube.core.network.RetrofitClient
+import com.geektech.youtubeapi.data.remote.model.Playlist
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -21,7 +20,7 @@ class PlaylistsViewModel: BaseViewModel() {
         return getPlaylists()
     }
 
-    private fun getPlaylists() : LiveData<Playlist> {
+    fun getPlaylists() : LiveData<Playlist> {
         val data = MutableLiveData<Playlist>()
 
         apiService.getPlaylists(com.example.youtube.BuildConfig.API_KEY, "contentDetails,snippet", "UCWOA1ZGywLbqmigxE4Qlvuw",30)

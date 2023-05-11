@@ -1,6 +1,6 @@
-package com.example.youtube.remote
+package com.example.youtube.core.network
 
-import androidx.viewbinding.BuildConfig
+import com.example.youtube.data.remote.ApiService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
